@@ -6,7 +6,23 @@ const inialState ={
 }
 
 const rootReducer = (state=inialState, action) => {
-    return state
+    switch (action.type) {
+        
+        
+        
+        
+        
+        
+        
+        case "SET_TOP_CITIES":
+           return{
+               ...state,
+               topCities:action.value
+           }
+    
+        default:
+            return state
+    }
 }
 
 export default rootReducer;
