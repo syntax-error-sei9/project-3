@@ -6,9 +6,14 @@ import {Provider} from 'react-redux';
 import rootReducer from './Store/reducer'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter } from "react-router-dom";
 
 const store = createStore(rootReducer)
-const app = <Provider store={store}> <App/> </Provider>
+const app = ( <BrowserRouter>
+                <Provider store={store}> 
+                    <App/>
+                    </Provider>
+            </BrowserRouter>)
 
 ReactDOM.render(app, document.getElementById('root'));
 
