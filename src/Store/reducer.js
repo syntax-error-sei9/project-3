@@ -11,8 +11,6 @@ const rootReducer = (state=inialState, action) => {
                ...state,
                topCities:action.value
            }
-        default:
-            return state
         case "SET_CITIES":
             return{...state,cities: action.value}
         default:
