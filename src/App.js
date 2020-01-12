@@ -6,6 +6,7 @@ import WhereToGo from './components/nav/WhereToGo'
 import {Route} from 'react-router-dom'
 
 
+import Sidebar from './components/sidebar/Sidebar';
 
 function App() {
   return (
@@ -43,6 +44,10 @@ function App() {
       {/* MAIN START HERE */}
         <Main />
       {/* MAIN END HERE */}
+     
+     {/* SIDE BAR START HERE */}
+      <Sidebar />
+      {/* SIDE BAR END HERE */}
     </div>
   );
 }
