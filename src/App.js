@@ -6,8 +6,8 @@ import CountryCard from './components/main/CountryCard'
 import {Route} from 'react-router-dom'
 import IntrestDetails from './components/intrestDetails/intrestDetails'
 import Interests from './components/interests/Interests'
-
-
+import Cities from './components/cities/Cities'
+import CityDetails from './components/main/CityDetails'
 import Sidebar from './components/sidebar/Sidebar';
 
 function App() {
@@ -18,20 +18,39 @@ function App() {
         <Route path="/" component={Nav} />
         <Route exact path="/" render={() => {
           return (
-            console.log("Home")
+            <React.Fragment>
+
+              {/* Country Start */}
+                <CountryCard />
+              {/* country end */}
+
+              {/* MAIN START HERE */}
+                <Main />
+              {/* MAIN END HERE */}
+
+              {/* SIDE BAR START HERE */}
+                <Sidebar />
+              {/* SIDE BAR END HERE */}
+
+      </React.Fragment>
           )
         }} />
-              <Route exact path="/Country" render = {() => {
+              <Route exact path="/Countries" render = {() => {
           return(
-            console.log("country")
+            <CountryCard />
           )
         }} />
-        <Route exact path="/City" render={() => {
+        <Route exact path="/Cities" render={() => {
           return(
-            console.log("City")
+            <Cities />
           )
           }}
           />
+          <Route exact path="/Cities/:id" render={()=>{
+            return(
+              <CityDetails />
+            )
+          }} />
                   <Route exact path="/Interests" render={() => {
           return(
              <Interests />
@@ -48,17 +67,8 @@ function App() {
           <WhereToGo />
       </header>
       {/* NAV END HERE */}
-      {/* Country Start */}
-      <CountryCard />
-      {/* country end */}
-      {/* MAIN START HERE */}
-        <Main />
-      {/* MAIN END HERE */}
      
-     {/* SIDE BAR START HERE */}
-      <Sidebar />
-      {/* SIDE BAR END HERE */}
-      <intrestDetails />
+      
 
     </div>
   );

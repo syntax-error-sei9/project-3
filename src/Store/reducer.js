@@ -3,6 +3,7 @@ const inialState ={
     topCities: [],
     intrests: [],
     countries: [],
+    allCities:[]
 }
 const rootReducer = (state=inialState, action) => {
     switch (action.type) {
@@ -16,16 +17,21 @@ const rootReducer = (state=inialState, action) => {
                 ...state,
                 cities: action.value
             }
-            case "GET_COUNTRIES":
-                return{
-                    ...state,
-                    countries: action.value
-                }
+        case "GET_COUNTRIES":
+            return{
+                ...state,
+                countries: action.value
+            }
         case "Add_intrest":
-        return {
-            ...state,
-            intrests: action.value
-        }
+            return {
+                ...state,
+                intrests: action.value
+            }
+        case "SET_ALL_CITIES":
+            return{
+                ...state,
+                allCities: action.value
+            }
         default:
             return state;
    
