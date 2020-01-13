@@ -16,7 +16,11 @@ const rootReducer = (state=inialState, action) => {
                 ...state,
                 cities: action.value
             }
-        
+            case "GET_COUNTRIES":
+                return{
+                    ...state,
+                    countries: action.value
+                }
         case "Add_intrest":
         return {
             ...state,

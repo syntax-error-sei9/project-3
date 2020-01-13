@@ -1,16 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
-import {connect} from 'react-redux'
+import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import {Nav} from 'react-bootstrap'
 
-function Nav(){
-    return ( 
-        <div>
-        <h1>NAVbar</h1>
-        <Link to="/Country">Country</Link>
-        <Link to="/City">City</Link>
-        <Link to="/Interests">Interests</Link>
-        </div>
-     )  
+function Nave() {
+  return (
+    <Nav variant="tabs" defaultActiveKey="/home">
+  <Nav.Item>
+    <Nav.Link to="/Country">Country</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link to="/City">City</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link to="/Interests">Interests</Nav.Link>
+  </Nav.Item>
+</Nav>
+            );
 }
- 
-export default Nav;
+
+export default Nave;

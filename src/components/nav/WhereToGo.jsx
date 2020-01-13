@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
+import Nav from "react-bootstrap/Nav";
+import { Button } from "react-bootstrap";
+import { InputGroup } from "react-bootstrap";
+
+import { FormControl } from "react-bootstrap";
 
 class WhereToGo extends Component {
+  state = {
+    search: ""
+  };
   onSubmit = event => {
     event.preventDefault();
     console.log(this.props.cities);
@@ -16,15 +24,47 @@ class WhereToGo extends Component {
         let cities = response.data.results;
         let citiesNames = cities.map(c => c.name);
         this.props.setCities(citiesNames);
+
         // console.log(citiesNames)
       });
   }
+  handleInputChange = e => {
+    const value = e.target.value;
+    this.setState(({ ...copyState }) => {
+      copyState.search = value;
+      return copyState;
+    });
+  };
   render() {
+    let arrSearch = this.props.cities.filter(city =>
+      city.toLowerCase().includes(this.state.search.toLowerCase())
+    );
+    arrSearch = arrSearch.map(city => (
+      <div>
+        <p>{city}</p>
+      </div>
+    ));
     return (
-      <form className="iputinfo" onSubmit={this.onSubmit}>
-        <input type="text" cities="cities" />
-        <button type="submit" />
-      </form>
+      <div>
+        <form className="iputinfo" onSubmit={this.onSubmit}>
+          <InputGroup className="mb-2">
+            <InputGroup.Prepend>
+              <InputGroup.Text>Where You want to Go </InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl
+              placeholder="Riyadh"
+              onChange={this.handleInputChange}
+              value={this.state.search}
+            />
+            <Button type="submit" variant="outline-secondary">
+              Search{" "}
+            </Button>
+          </InputGroup>
+
+          {/* <button type="submit" /> */}
+        </form>
+        {this.state.search ? arrSearch : null}
+      </div>
     );
   }
 }

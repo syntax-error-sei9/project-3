@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
 import Main from './components/main/Main'
 import Nav from './components/nav/Nav'
 import WhereToGo from './components/nav/WhereToGo'
+import CountryCard from './components/main/CountryCard'
 import {Route} from 'react-router-dom'
 import IntrestDetails from './components/intrestDetails/intrestDetails'
 import Interests from './components/interests/Interests'
@@ -48,7 +48,9 @@ function App() {
           <WhereToGo />
       </header>
       {/* NAV END HERE */}
-
+      {/* Country Start */}
+      <CountryCard />
+      {/* country end */}
       {/* MAIN START HERE */}
         <Main />
       {/* MAIN END HERE */}
