@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import {Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
+
+
 
 class SideBar extends Component {
+    
     render() { 
+        const firstTen = this.props.intrests.slice(0,10)
         return ( 
             <div>
-                {this.props.intrests.map(element => {
+                {firstTen.map(element => {
                     return (
-                    <h1 key={element.intrestId}>{element.intrestName}</h1>
+                    <Link to={`/Interests/${element.intrestId}`}>
+                    <li key={element.intrestId}> {element.intrestName} </li>
+                    </Link>
                     )
-                })}
+                })}       
             </div>
          );
     }
@@ -54,4 +62,4 @@ const setState = (dispatch) => {
     }
   }
 
-export default connect(getState, setState) (SideBar);
+export default withRouter(connect(getState, setState) (SideBar));
