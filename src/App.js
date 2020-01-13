@@ -4,6 +4,8 @@ import Main from './components/main/Main'
 import Nav from './components/nav/Nav'
 import WhereToGo from './components/nav/WhereToGo'
 import {Route} from 'react-router-dom'
+import IntrestDetails from './components/intrestDetails/intrestDetails'
+import Interests from './components/interests/Interests'
 
 
 import Sidebar from './components/sidebar/Sidebar';
@@ -32,11 +34,17 @@ function App() {
           />
                   <Route exact path="/Interests" render={() => {
           return(
-              console.log("Interests")
+             <Interests />
 
           )
           }}
           />
+          <Route exact path="/Interests/:id" render={()=>{
+            return(
+              <IntrestDetails />
+            )
+          }} />
+
           <WhereToGo />
       </header>
       {/* NAV END HERE */}
@@ -48,6 +56,8 @@ function App() {
      {/* SIDE BAR START HERE */}
       <Sidebar />
       {/* SIDE BAR END HERE */}
+      <intrestDetails />
+
     </div>
   );
 }
