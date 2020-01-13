@@ -7,13 +7,13 @@ function Nave() {
   return (
     <Nav variant="tabs" defaultActiveKey="/home">
   <Nav.Item>
-    <Nav.Link to="/Country">Country</Nav.Link>
+    <Nav><Link to="/Countries"> Countries | </Link></Nav>
   </Nav.Item>
   <Nav.Item>
-    <Nav.Link to="/City">City</Nav.Link>
+    <Nav><Link to="/Cities"> Cities | </Link></Nav>
   </Nav.Item>
   <Nav.Item>
-    <Nav.Link to="/Interests">Interests</Nav.Link>
+    <Nav><Link to="/Interests"> Interests</Link></Nav>
   </Nav.Item>
 </Nav>
             );
