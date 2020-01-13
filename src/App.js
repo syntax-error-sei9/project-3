@@ -16,6 +16,9 @@ function App() {
       {/* NAV START HERE */}
       <header className="App-header">
         <Route path="/" component={Nav} />
+        <WhereToGo />
+        </header>
+      {/* NAV END HERE */}
         <Route exact path="/" render={() => {
           return (
             <React.Fragment>
@@ -64,9 +67,8 @@ function App() {
             )
           }} />
 
-          <WhereToGo />
-      </header>
-      {/* NAV END HERE */}
+         
+     
      
       
 
