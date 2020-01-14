@@ -18,6 +18,7 @@ class Interests extends Component {
 
 const getState = (state) => {
     return {
+        
         interests: state.intrests
     }
 }
