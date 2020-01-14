@@ -13,6 +13,7 @@ class Cities extends React.Component {
         let name=""
         let img=""
         let snippet=""
+        let countryId=""
         let cityObj={}
         let allCities=[]
         axios.get(apiUrl)
@@ -22,11 +23,11 @@ class Cities extends React.Component {
                 name=city.name
                 img=city.images[0].sizes.original
                 snippet=city.snippet
-                cityObj={id:id, name:name, img:img, snippet:snippet}
+                countryId=city.country_id
+                cityObj={id:id, name:name, img:img, snippet:snippet, countryId:countryId}
                 allCities.push(cityObj)
             })
             this.props.setAllCities(allCities);
-            console.log(allCities)
         })
     }
     render() { 
@@ -34,10 +35,9 @@ class Cities extends React.Component {
             <React.Fragment>
             <h1>ALL CITIES</h1>
             {this.props.allCities.map((city,index)=>{
-                console.log(city.id)
                 return(
                     <div>
-                    <Link to={`/Cities/${city.id}`} key={index} >     
+                    <Link to={`/Countries/${city.countryId}/Cities/${city.id}`} key={index} >     
                         <CityCard id={city.id} name={city.name} imgURL={city.img.url} snippet={city.snippet} /> 
                     </Link>    
                      
