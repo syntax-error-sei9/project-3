@@ -15,8 +15,13 @@ function App() {
     <div className="App">
       {/* NAV START HERE */}
       <header className="App-header">
-        <Route path="/" component={Nav} />
-        <WhereToGo />
+        <Route path="/" render={()=>{
+          return(
+            <div>
+            <Nav/>
+            <WhereToGo />
+            </div>
+          )}} />
         </header>
       {/* NAV END HERE */}
         <Route exact path="/" render={() => {
@@ -49,7 +54,14 @@ function App() {
           )
           }}
           />
-          <Route exact path="/Cities/:id" render={()=>{
+
+          <Route exact path="/Countries/:countryId/Cities" render={()=>{
+            return(
+              <CityDetails />
+            )
+          }} />
+
+          <Route exact path="/Countries/:countryId/Cities/:id" render={()=>{
             return(
               <CityDetails />
             )

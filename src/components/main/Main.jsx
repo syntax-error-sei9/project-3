@@ -24,7 +24,6 @@ class MainSection extends React.Component{
                 citiesTop.push(cityObj)
             })
             this.props.setTopCities(citiesTop);
-            console.log(citiesTop)
         })
     }
     render(){
