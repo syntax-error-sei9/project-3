@@ -9,7 +9,7 @@ import {withRouter} from 'react-router-dom'
 class Cities extends React.Component {
     
     componentDidMount(){
-        const apiUrl= 'https://www.triposo.com/api/20190906/location.json?&fields=all&count=10&account=M48YWFOZ&token=8tobp16qxx6luhn0k0fhlou5m4h52poe'
+        const apiUrl= 'https://www.triposo.com/api/20190906/location.json?&fields=all&count=25&account=M48YWFOZ&token=8tobp16qxx6luhn0k0fhlou5m4h52poe'
         let id =""
         let name=""
         let img=""

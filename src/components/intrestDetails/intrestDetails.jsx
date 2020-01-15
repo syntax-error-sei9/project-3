@@ -41,7 +41,7 @@ console.log(results)
 
     render() { 
         return ( 
-         <div>
+         <div className="CitiesContainer">
              {this.state.cities.map((city,index) => {
                return (
                 <div>
