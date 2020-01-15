@@ -12,6 +12,8 @@ import Sidebar from './components/sidebar/Sidebar';
 import './App.css'
 
 function App() {
+  // const countries = this.props.countries.slice(0,10)
+
   return (
     <div className="App">
       {/* NAV START HERE */}
@@ -20,11 +22,12 @@ function App() {
           return(
             <div>
             <Nav/>
-            <WhereToGo />
+            {/* <WhereToGo /> */}
             </div>
           )}} />
         </header>
       {/* NAV END HERE */}
+      
         <Route exact path="/" render={() => {
           return (
             <React.Fragment>

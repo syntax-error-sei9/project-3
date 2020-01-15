@@ -4,6 +4,9 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { Card } from "react-bootstrap";
+import { CardGroup } from "react-bootstrap";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 class CountryCard extends Component {
   componentDidMount() {
@@ -37,42 +40,44 @@ class CountryCard extends Component {
   render() {
     return (
       <React.Fragment>
-        {this.props.countries.map(country => {
-          return (
-            <Card style={{ width: "18rem" }}>
-              <Card.Img
-                variant="top"
-                src={country.image.url}
-                width="200"
-                height="200"
-              />
-              <Card.Body>
-                <Card.Title>{country.name}</Card.Title>
-                <Card.Text>
-                  <p>{country.snippet}</p>
-                </Card.Text>
-                <Button variant="outline-secondary"
-                Link to={`/countries/${country.coutryid}`}
-                className="card"
-                key={country.coutryid}
-                Link>
-
-                Discover</Button>
-              </Card.Body>
-            </Card>
-
-            //     <Link to={`/countries/${country.coutryid}`}
-            //     className="card"
-            //     key={country.coutryid}
-            //   >
-            //                   <div className="CountryCard">
-            //       <img src={country.image.url} width="200" height="200" />
-            //       <h2>{country.name}</h2>
-            //       <p>{country.snippet}</p>
-            //     </div>
-            //     </Link>
-          );
-        })}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            flexGrow: 4,
+            flexWrap: "wrap",
+            justifyContent: "space-around"
+            
+          }}
+        >
+          {this.props.countries.map(country => {
+            return (
+           
+              <div class="card-group">
+                <div class="card" style={{ width: "18rem" }}>
+                  <img
+                    variant="top"
+                    src={country.image.url}
+                    width="200"
+                    height="200"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">{country.name}</h5>
+                    <p class="card-text">{country.snippet}</p>
+                  </div>
+                  <Button variant="outline-secondary"
+                  Link to={`/countries/${country.coutryid}`}
+                  className="card"
+                  key={country.coutryid}
+                  Link>
+                  Discover</Button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </React.Fragment>
     );
   }

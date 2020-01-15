@@ -4,8 +4,8 @@ import axios from "axios";
 import Nav from "react-bootstrap/Nav";
 import { Button } from "react-bootstrap";
 import { InputGroup } from "react-bootstrap";
-
 import { FormControl } from "react-bootstrap";
+import { Dropdown } from "semantic-ui-react";
 
 class WhereToGo extends Component {
   state = {
@@ -35,7 +35,9 @@ class WhereToGo extends Component {
       return copyState;
     });
   };
-  render() {
+
+  render()
+   {
     let arrSearch = this.props.cities.filter(city =>
       city.toLowerCase().includes(this.state.search.toLowerCase())
     );
@@ -47,7 +49,7 @@ class WhereToGo extends Component {
     return (
       <div>
         <form className="iputinfo" onSubmit={this.onSubmit}>
-          <InputGroup className="mb-2">
+          <InputGroup className="mb-2 mx-3 my-2 w-auto">
             <InputGroup.Prepend>
               <InputGroup.Text>Where You want to Go </InputGroup.Text>
             </InputGroup.Prepend>
@@ -55,13 +57,14 @@ class WhereToGo extends Component {
               placeholder="Riyadh"
               onChange={this.handleInputChange}
               value={this.state.search}
+              autoFocus
             />
-            <Button type="submit" variant="outline-secondary">
+            
+            <Button type="submit">
               Search{" "}
             </Button>
           </InputGroup>
 
-          {/* <button type="submit" /> */}
         </form>
         {this.state.search ? arrSearch : null}
       </div>
