@@ -9,6 +9,7 @@ import Interests from './components/interests/Interests'
 import Cities from './components/cities/Cities'
 import CityDetails from './components/main/CityDetails'
 import Sidebar from './components/sidebar/Sidebar';
+import './App.css'
 
 function App() {
   return (
@@ -29,11 +30,11 @@ function App() {
             <React.Fragment>
 
               {/* Country Start */}
-                <CountryCard />
+                {/* <CountryCard /> */}
               {/* country end */}
 
               {/* MAIN START HERE */}
-                <Main />
+                {/* <Main /> */}
               {/* MAIN END HERE */}
 
               {/* SIDE BAR START HERE */}
