@@ -5,6 +5,7 @@ import CityCard from '../main/CityCard'
 import {Link} from 'react-router-dom'
 import {withRouter} from 'react-router-dom'
 
+
 class Cities extends React.Component {
     
     componentDidMount(){
@@ -33,17 +34,19 @@ class Cities extends React.Component {
     render() { 
         return ( 
             <React.Fragment>
-            <h1>ALL CITIES</h1>
+            <h1>Cities Around The World</h1>
+            <div className="CitiesContainer">
             {this.props.allCities.map((city,index)=>{
                 return(
-                    <div>
+                    
                     <Link to={`/Countries/${city.countryId}/Cities/${city.id}`} key={index} >     
                         <CityCard id={city.id} name={city.name} imgURL={city.img.url} snippet={city.snippet} /> 
                     </Link>    
                      
-                     </div>       
+                           
                 )
             })}
+            </div> 
             </React.Fragment>
          );
     }
