@@ -9,19 +9,19 @@ function Nave() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand>
-        <Link to="/"> Home | </Link>
+        <Link className="navColor" to="/"> Home  </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto " >
-          <Nav style={{color: "white"}}>
-            <Link to="/Countries"> Countries |</Link>
+          <Nav >
+            <Link className="navColor" to="/Countries"> Countries . </Link>
           </Nav>
           <Nav>
-            <Link to="/Cities"> Cities | </Link>
+            <Link className="navColor" to="/Cities"> Cities   . </Link>
           </Nav>
           <Nav variant="outline-secondary">
-            <Link to="/Interests"> Interests </Link>
+            <Link className="navColor" to="/Interests"> Interests </Link>
           </Nav>
         </Nav>
         <Nav className="mr-auto">
@@ -29,7 +29,7 @@ function Nave() {
         </Nav>
         <Nav>
           <Nav>
-            <Link to="/About"> About </Link>
+            <Link className="navColor" to="/About"> About </Link>
           </Nav>
         </Nav>
       </Navbar.Collapse>

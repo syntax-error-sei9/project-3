@@ -10,6 +10,7 @@ import Cities from './components/cities/Cities'
 import CityDetails from './components/main/CityDetails'
 import Sidebar from './components/sidebar/Sidebar';
 import './App.css'
+import CitiesInCountry from './components/cities/CitiesInCountry'
 
 function App() {
   // const countries = this.props.countries.slice(0,10)
@@ -33,14 +34,18 @@ function App() {
             <React.Fragment>
 
               {/* Country Start */}
+            
                 {/* <CountryCard /> */}
+               
               {/* country end */}
 
               {/* MAIN START HERE */}
-                {/* <Main /> */}
+              <h1>Discover These Cities Now!</h1>
+                <Main />
               {/* MAIN END HERE */}
 
               {/* SIDE BAR START HERE */}
+              <h1>Discover By Interests</h1>
                 <Sidebar />
               {/* SIDE BAR END HERE */}
 
@@ -61,7 +66,8 @@ function App() {
 
           <Route exact path="/Countries/:countryId/Cities" render={()=>{
             return(
-              <CityDetails />
+
+              <CitiesInCountry />
             )
           }} />
 

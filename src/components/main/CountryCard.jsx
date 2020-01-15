@@ -11,7 +11,7 @@ import "react-multi-carousel/lib/styles.css";
 class CountryCard extends Component {
   componentDidMount() {
     Axios.get(
-      "https://www.triposo.com/api/20190906/location.json?tag_labels=country&count=100&account=M48YWFOZ&token=8tobp16qxx6luhn0k0fhlou5m4h52poe"
+      "https://www.triposo.com/api/20190906/location.json?tag_labels=country&count=20&account=M48YWFOZ&token=8tobp16qxx6luhn0k0fhlou5m4h52poe"
     ).then(response => {
       const countries = response.data.results;
       let name = "";
@@ -67,12 +67,12 @@ class CountryCard extends Component {
                     <h5 class="card-title">{country.name}</h5>
                     <p class="card-text">{country.snippet}</p>
                   </div>
-                  <Button variant="outline-secondary"
-                  Link to={`/countries/${country.coutryid}`}
+                  <Link to={`/Countries/${country.coutryid}/Cities`}
                   className="card"
-                  key={country.coutryid}
-                  Link>
+                  key={country.coutryid}>
+                  <Button variant="outline-secondary">
                   Discover</Button>
+                  </Link>
                 </div>
               </div>
             );

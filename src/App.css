@@ -5,3 +5,8 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.navColor{
+  color:white;
+  text-decoration: none;
+}
